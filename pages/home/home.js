@@ -1,13 +1,17 @@
-import { FirebaseAuth} from "../../firebase/config"
-import { signOut } from "firebase/auth"
+//IMPORTANDO MI AUTH
+import { FirebaseAuth } from "../../firebase/config";
+//IMPORTANDO FUNCIONES DE FIREBASE
+import { onAuthStateChanged } from "firebase/auth";
+//IMPORTANDO FUNCION LOG OUT DEL USER CONTROL
+import { onLogOut } from "../../helpers/userControl";
+
+onAuthStateChanged(FirebaseAuth, (user) => {
+    if(!user){
+        window.location.href = "../register/register.html"
+    }
+})
 
 const button = document.getElementById("btn");
 
-button.addEventListener("click", () => {
-    signOut(FirebaseAuth).then (() => {
-        console.log("Cierre de sesion exitos");
-        window.location.href = "../../index.html"
-    })
-
-})
+button.addEventListener("click", onLogOut);
 
