@@ -12,6 +12,7 @@ export const onRegisterUser = async (emailValue, passwordValue, userValue) => {
     await updateProfile(FirebaseAuth.currentUser, {
         displayName: userValue
     })
+    window.location.href = "../../index.html"
     
 }
 

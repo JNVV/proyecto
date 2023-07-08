@@ -1,7 +1,15 @@
-
+//IMPORTANDO MI AUTH
+import { FirebaseAuth } from "../../firebase/config";
+//IMPORTANDO FUNCIONES DESDE FIREBASE
+import { onAuthStateChanged } from "firebase/auth";
 //IMPORTANDO OnRegisterUser para empezar registro
 import { onRegisterUser } from "../../helpers/userControl";
 
+onAuthStateChanged(FirebaseAuth, (user) => {
+  if(user){
+      window.location.href = "../../index.html";
+  }
+})
 
 const userInput = document.getElementById("name")
 const emailInput = document.getElementById("email");
@@ -15,6 +23,8 @@ button.addEventListener("click", () => {
   let userValue = userInput.value 
 
   onRegisterUser(emailValue, passwordValue, userValue);
+
+  
 })
 
 
