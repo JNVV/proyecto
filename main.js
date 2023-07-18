@@ -1,5 +1,6 @@
 import { onAuthStateChanged } from "firebase/auth"
 import { FirebaseAuth } from "./firebase/config"
+import { showMessage } from "./helpers/showMessage";
 
 onAuthStateChanged(FirebaseAuth, (user) => {
     if(user){

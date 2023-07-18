@@ -24,7 +24,6 @@ button.addEventListener("click", () => {
 
   onRegisterUser(emailValue, passwordValue, userValue);
 
-  
 })
 
 

@@ -12,6 +12,7 @@
     "vite": "^4.3.9"
   },
   "dependencies": {
-    "firebase": "^9.23.0"
+    "firebase": "^9.23.0",
+    "toastify-js": "^1.12.0"
   }
 }
