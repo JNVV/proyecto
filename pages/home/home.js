@@ -12,6 +12,10 @@ onAuthStateChanged(FirebaseAuth, (user) => {
 })
 
 const button = document.getElementById("btn");
+const btnRequest = document.getElementById("btnRequest");
 
 button.addEventListener("click", onLogOut);
+btnRequest.addEventListener("click", () => {
+    window.location.href="../solicitud/solicitud.html";
+})
 

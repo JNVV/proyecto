@@ -4,7 +4,6 @@ import "toastify-js/src/toastify.css"
         Toastify({
             text: message,
             duration: 3000,
-            destination: "https://github.com/apvarun/toastify-js",
             newWindow: true,
             close: true,
             gravity: "bottom", // `top` or `bottom`
