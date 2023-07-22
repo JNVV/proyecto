@@ -16,6 +16,6 @@ const btnRequest = document.getElementById("btnRequest");
 
 button.addEventListener("click", onLogOut);
 btnRequest.addEventListener("click", () => {
-    window.location.href="../solicitud/solicitud.html";
+    window.location.href="../solicitud/request.html";
 })
 
