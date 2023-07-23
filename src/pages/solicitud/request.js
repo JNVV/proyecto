@@ -1,4 +1,4 @@
-import { saveTask } from "../../firebase/config"
+import { saveTask } from "../../firebase/actions"
 
 const title =  document.getElementById("nombreInput");
 const jefe = document.getElementById("jefeInput"); 
@@ -10,6 +10,7 @@ const resumen = document.getElementById("resumenInput");
 const button = document.getElementById("btn");
 
 button.addEventListener("click", () => {
+
     let titleValue = title.value;
     let jefeValue = jefe.value;
     let gradoValue = grado.value;
@@ -19,7 +20,5 @@ button.addEventListener("click", () => {
     let gerenteValue = gerente.value;
     let resumenValue = resumen.value;
 
-    saveTask(titleValue, jefeValue, gradoValue, selectText, añoValue, gerenteValue, resumenValue);
-
-    
+    saveTask({titleValue, jefeValue, gradoValue, selectText, añoValue, gerenteValue, resumenValue});
 })

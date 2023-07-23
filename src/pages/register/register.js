@@ -7,7 +7,7 @@ import { onRegisterUser } from "../../helpers/userControl";
 
 onAuthStateChanged(FirebaseAuth, (user) => {
   if(user){
-      window.location.href = "../../index.html";
+      window.location.href = "../../../index.html";
   }
 })
 

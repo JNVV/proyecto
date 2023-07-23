@@ -1,11 +1,10 @@
 import { onAuthStateChanged } from "firebase/auth"
-import { FirebaseAuth } from "./firebase/config"
-import { showMessage } from "./helpers/showMessage";
+import { FirebaseAuth } from "./src/firebase/config"
 
 onAuthStateChanged(FirebaseAuth, (user) => {
     if(user){
-        window.location.href = "./pages/home/home.html";
+        window.location.href = "./src/pages/home/home.html";
     } else {
-        window.location.href = "./pages/register/register.html"
+        window.location.href = "./src/pages/register/register.html"
     }
 })

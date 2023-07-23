@@ -11,7 +11,7 @@ export const onRegisterUser = async (emailValue, passwordValue, userValue) => {
         await createUserWithEmailAndPassword(FirebaseAuth, emailValue, passwordValue)  
         //UNA VEZ TERMINADA LA PETICION (usuario registrado), PROCEDE A ACTUALIZARSE EL USUARIO
         await updateProfile(FirebaseAuth.currentUser, { displayName: userValue })  
-        window.location.href = "../../index.html"  
+        window.location.href = "../../../index.html"  
 
     } catch(error){
         if(error.code === "auth/email-already-in-use"){
@@ -30,7 +30,7 @@ export const onRegisterUser = async (emailValue, passwordValue, userValue) => {
 
 export const onLogOut = async () => {
     await signOut(FirebaseAuth)
-    window.location.href = "../../index.html"
+    window.location.href = "../../../index.html"
 } 
 
 //FUNCION LOGIN 
@@ -40,8 +40,7 @@ export const onSignIn = async (emailValue, passwordValue) => {
         const response = await signInWithEmailAndPassword(FirebaseAuth, emailValue, passwordValue)
         const user = response.user
     
-        console.log(user);
-        window.location.href = "../../index.html"
+        window.location.href = "../../../index.html"
     }catch(error){
         if(error.code == "auth/user-not-found"){
            showMessage("Este correo no se encuentra registrado", "error");
