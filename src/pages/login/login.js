@@ -1,34 +1,27 @@
-//IMPORTANDO MI AUTH
-import { FirebaseAuth } from "../../firebase/config";
-//IMPORTANDO OnSignIn para iniciar sesion
-import { onSignIn } from "../../helpers/userControl";
-//IMPORTANDO FUNCIONESDE FIREBASE
-import { onAuthStateChanged } from "firebase/auth";
+//IMPORTANDO FUNCIONES DE SUPABASE
+import { authChecking, loginUser } from "../../supabase/actions";
 
-onAuthStateChanged(FirebaseAuth, (user) => {
-    if(user){
-        window.location.href = "../../../index.html";
+//FUNCION QUE REVISA SI HAY UNA SESION ACTIVA O NO
+authChecking().then((user) => {
+    if (user) {
+        window.location.href = "../../../index.html"
     }
 })
 
+//OBTENIENDO LOS ELEMENTOS DEL ELEMENTOS DEL FORMULARIO (INPUTS)
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 
+//BOTÓN INICAR SESIÓN
 const button = document.getElementById("btn");
 
 button.addEventListener("click", () => {
-    
+
+    //VARIABLES CON LOS VALORES DEL FORMULARIO
     let emailValue = emailInput.value;
     let passwordValue = passwordInput.value;
 
-    onSignIn(emailValue, passwordValue);
-    
-    // signInWithEmailAndPassword(FirebaseAuth, emailValue, passwordValue)
-    // .then((userCredential) => {
-    //     const user = userCredential.user;
-    //     console.log(user);
-    //     window.location.href = "../../index.html"
-    // })
+    loginUser(emailValue, passwordValue)
 })
 
 

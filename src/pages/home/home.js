@@ -1,20 +1,21 @@
-//IMPORTANDO MI AUTH
-import { FirebaseAuth } from "../../firebase/config";
-//IMPORTANDO FUNCIONES DE FIREBASE
-import { onAuthStateChanged } from "firebase/auth";
-//IMPORTANDO FUNCION LOG OUT DEL USER CONTROL
-import { onLogOut } from "../../helpers/userControl";
+//IMPORTANDO FUNCIONES DE SUPABASE
+import { authChecking, logOut } from "../../supabase/actions";
 
-onAuthStateChanged(FirebaseAuth, (user) => {
+//FUNCION QUE REVISA SI HAY UNA SESION ACTIVA O NO
+authChecking().then((user) => {
     if(!user){
-        window.location.href = "../register/register.html"
+        window.location.href = "../register.html"
     }
 })
 
+//OBTENIENDO LOS BOTONES DEL FORMULARIO
 const button = document.getElementById("btn");
 const btnRequest = document.getElementById("btnRequest");
 
-button.addEventListener("click", onLogOut);
+//BOTON CERRAR SESIÓN
+button.addEventListener("click", logOut);
+
+//BOTON ENVIAR SOLICITUD DE PROYECTO
 btnRequest.addEventListener("click", () => {
     window.location.href="../solicitud/request.html";
 })

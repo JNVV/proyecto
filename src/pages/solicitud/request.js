@@ -1,5 +1,7 @@
-import { saveTask } from "../../firebase/actions"
+//IMPORTANDO FUNCIONES DE SUPABASE
+import { saveTask } from "../../supabase/actions"
 
+//OBTENIENDO LOS ELEMENTOS DEL ELEMENTOS DEL FORMULARIO (INPUTS, BOTONES, SELECT)
 const title =  document.getElementById("nombreInput");
 const jefe = document.getElementById("jefeInput"); 
 const grado = document.getElementById("gradoInput");
@@ -9,8 +11,10 @@ const gerente = document.getElementById("gerenteInput");
 const resumen = document.getElementById("resumenInput");
 const button = document.getElementById("btn");
 
+//BOTON ENVIAR FORMULARIO
 button.addEventListener("click", () => {
 
+    //VARIABLES CON LOS VALORES DEL FORMULARIO
     let titleValue = title.value;
     let jefeValue = jefe.value;
     let gradoValue = grado.value;
@@ -20,5 +24,6 @@ button.addEventListener("click", () => {
     let gerenteValue = gerente.value;
     let resumenValue = resumen.value;
 
+    //FUNCIÓN QUE ALMACENA Y ENVIA LOS DATOS DE LA SOLICITUD A LA BASE DE DATOS
     saveTask({titleValue, jefeValue, gradoValue, selectText, añoValue, gerenteValue, resumenValue});
 })
