@@ -24,7 +24,7 @@ export const saveTask = async (formValues) => {
         gerenteValue,
         resumenValue,
     } = formValues;
-    const {} = await supabase.from("forms").insert({
+    const { } = await supabase.from("forms").insert({
         title: titleValue,
         created_by: user.id,
         degree: gradoValue,
@@ -80,17 +80,42 @@ export const authChecking = async () => {
 
 //LOGEAR USUARIOS
 
-export const loginUser = async (emailValue, passwordValue) => {
-    try {
-        const { user, error } = await supabase.auth.signInWithPassword({
-            email: emailValue,
-            password: passwordValue,
+export const loginUser = async (emailValue = "", passwordValue = "") => {
+    if (!(emailValue.length > 0) || !(passwordValue.length > 0)) {
+        formValidations({
+            message: "values cannot be null",
         });
 
-        window.location.href = "../../../index.html";
-    } catch (error) {
-        console.log(error);
+        return;
+
+    } else if (!(passwordValue.length > 6)) {
+        formValidations({
+            message: "the password is invalid",
+        });
+
+        return;
+    } else if (!validateEmail(emailValue)) {
+        formValidations({
+            message: "the email is invalid",
+        });
+
+        return;
     }
+
+    const { user, error } = await supabase.auth.signInWithPassword({
+        email: emailValue,
+        password: passwordValue,
+    });
+
+    if (error) {
+        formValidations({
+            message: "Invalid login credentials"
+
+        })
+        return;
+    }
+
+    window.location.href = "../../../index.html";
 };
 
 //CERRAR SESIONES

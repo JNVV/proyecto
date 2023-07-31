@@ -18,8 +18,7 @@ export const formValidations = (error) => {
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
             // ESCOJA LA QUE MAS LE GUSTE
-            background: "linear-gradient(to right, #FF0000, #FF6666, #FF9999, #FFCCCC)",
-            // background: "linear-gradient(to right, #CC0000, #990000, #660000, #330000)"
+            background: "linear-gradient(to right, #CC0000, #990000, #660000, #330000)"
             // background: "linear-gradient(45deg, #CC0000, #990000, #660000, #330000)"
             // background: "linear-gradient(to top, #CC0000, #990000, #660000, #330000)"
         },
