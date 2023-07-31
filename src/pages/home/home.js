@@ -4,7 +4,7 @@ import { authChecking, logOut } from "../../supabase/actions";
 //FUNCION QUE REVISA SI HAY UNA SESION ACTIVA O NO
 authChecking().then((user) => {
     if(!user){
-        window.location.href = "../register.html"
+        window.location.href = "../../../index.html"
     }
 })
 
@@ -17,6 +17,6 @@ button.addEventListener("click", logOut);
 
 //BOTON ENVIAR SOLICITUD DE PROYECTO
 btnRequest.addEventListener("click", () => {
-    window.location.href="../solicitud/request.html";
+    window.location.href="../request/request.html";
 })
 

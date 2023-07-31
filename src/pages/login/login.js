@@ -4,6 +4,7 @@ import { authChecking, loginUser } from "../../supabase/actions";
 //FUNCION QUE REVISA SI HAY UNA SESION ACTIVA O NO
 authChecking().then((user) => {
     if (user) {
+        // console.log(authChecking)
         window.location.href = "../../../index.html"
     }
 })

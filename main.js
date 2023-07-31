@@ -1,6 +1,4 @@
-
 import { authChecking } from "./src/supabase/actions"
-
 
 authChecking().then((user) => {
     if(user) {
