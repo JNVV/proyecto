@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
-    <!--ESTIILOS DE BOOSTRAP-->        
+    <!--ESTIILOS DE BOOSTRAP-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
@@ -18,46 +18,54 @@
     <div class="container-fluid justify-content-center vh-100 ">
 
         <div class="container d-flex justify-content-center bg-white w-100 mt-5">
-            <form class="row border border-success p-4 m-2 shadow-lg p-3 mb-5" style="width: 1000px; height: 400px;">
+            <form class="row border border-success p-4 m-2 shadow-lg p-3 mb-5" style="width: 1000px; height: 500px;">
 
                 <div class="col-12">
-                    <input type="text" class="form-control mb-3" id="nombreInput" placeholder="Titulo del proyecto">
+                    <label for="nombreInput" class="form-label">Titulo del proyecto</label>
+                    <input type="text" class="form-control mb-3" id="nombreInput">
                 </div>
 
                 <div class="col-4">
-                    <input type="text" class="form-control mb-3" id="jefeInput" placeholder="Jefe del proyecto">
+                    <label for="jefeInput" class="form-label">Jefe del proyecto</label>
+                    <input type="text" class="form-control mb-3" id="jefeInput">
                 </div>
 
                 <div class="col-4">
-                    <input type="text" class="form-control mb-3" id="gradoInput" placeholder="Grado">
+                    <label for="selectGrado" class="form-label">Grado</label>
+                    <div class="mb-3">  
+                        <select class="form-select" id="selectGrado">
+                        
+                        </select>
+                    </div>
                 </div>
 
                 <div class="col-4">
                     <div class="mb-3">
+                        <label for="selectInput" class="form-label">Especialidad</label>
                         <select class="form-select" id="selectInput">
-                            <option value="1">Sistemas y computación</option>
-                            <option value="2">Metalisteria</option>
-                            <option value="3">Mecanica automotriz</option>
-                            <option value="4">Mecanica industrial</option>
-                            <option value="5">Electricidad</option>
-                            <option value="6">Dibujo Técnico</option>
-                            <option value="7">Eléctronica</option>
-
+                                                 
                         </select>
                     </div>
                 </div>
 
                 <div class="col-6">
-                    <input type="text" id="añoInput" placeholder="Año de realización" class="form-control mb-3">
+                    <label for="añoInput" class="form-label">Año de realización</label>
+                    <input type="text" id="añoInput" class="form-control mb-3">
                 </div>
 
                 <div class="col-6">
+                    <label for="gerenteInput" class="form-label">Gerente del proyecto</label>
                     <input type="text" id="gerenteInput" placeholder="Gerente/Colaborador" class="form-control mb-3">
                 </div>
 
-                <div>
-                    <textarea id="resumenInput" class="form-control mb-3"
-                        placeholder="Resumen de tu proyecto"></textarea>
+                <!-- <div class="col-4">
+                    <label for="cargoInput" class="form-label">Cargo del gerente</label>
+                    <input type="text" id="cargoInput" placeholder="EJ: Administrador" class="form-control mb-3">
+                </div> -->
+
+                <div class="col-12">
+                    <label for="resumenInput" class="form-label">Resumen de tu proyecto</label>
+                    <textarea id="resumenInput" class="form-control mb-3"></textarea>
                 </div>
 
                 <div class="col-12">
