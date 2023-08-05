@@ -1,5 +1,5 @@
 //IMPORTANDO FUNCIONES DE SUPABASE
-import { authChecking, saveTask } from "../../supabase/actions";
+import { authChecking, dataTable, saveTask } from "../../supabase/actions";
 
 authChecking().then((user) => {
     if (!user) {
@@ -19,24 +19,25 @@ const button = document.getElementById("btn");
 
 //BOTON ENVIAR FORMULARIO
 button.addEventListener("click", () => {
-    //VARIABLES CON LOS VALORES DEL FORMULARIO
-    let titleValue = title.value;
-    let jefeValue = jefe.value;
-    let gradoValue = grado.value;
-    let selectValue = select.value;
-    let selectText = select.options[select.selectedIndex].text;
-    let añoValue = año.value;
-    let gerenteValue = gerente.value;
-    let resumenValue = resumen.value;
+    dataTable();
+    // //VARIABLES CON LOS VALORES DEL FORMULARIO
+    // let titleValue = title.value;
+    // let jefeValue = jefe.value;
+    // let gradoValue = grado.value;
+    // let selectValue = select.value;
+    // let selectText = select.options[select.selectedIndex].text;
+    // let añoValue = año.value;
+    // let gerenteValue = gerente.value;
+    // let resumenValue = resumen.value;
 
-    //FUNCIÓN QUE ALMACENA Y ENVIA LOS DATOS DE LA SOLICITUD A LA BASE DE DATOS
-    saveTask({
-        titleValue,
-        jefeValue,
-        gradoValue,
-        selectText,
-        añoValue,
-        gerenteValue,
-        resumenValue,
-    });
+    // //FUNCIÓN QUE ALMACENA Y ENVIA LOS DATOS DE LA SOLICITUD A LA BASE DE DATOS
+    // saveTask({
+    //     titleValue,
+    //     jefeValue,
+    //     gradoValue,
+    //     selectText,
+    //     añoValue,
+    //     gerenteValue,
+    //     resumenValue,
+    // });
 });

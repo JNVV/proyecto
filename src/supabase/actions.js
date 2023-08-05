@@ -9,32 +9,47 @@ const apiKey =
 
 export const supabase = createClient(url, apiKey);
 
+//FUNCION PARA CONSULTAR LOS DATOS Y MOSTRARLOS
+export const dataTable = () => {
+    async function fetchData() {
+        const { data, error } = await supabase.from('especialidades').select('*');
+      
+        if (error) {
+          console.error('Error al obtener los datos:', error);
+          return;
+        }
+    
+        console.log('Datos de usuarios:', data);
+      }
+      fetchData();
+}
+
 //FUNCIÓN QUE GUARDA LOS DATOS DEL FORMULARIO EN LA TABLA FORMS
 export const saveTask = async (formValues) => {
-    const {
-        data: { user },
-    } = await supabase.auth.getUser();
+    // const {
+    //     data: { user },
+    // } = await supabase.auth.getUser();
 
-    const {
-        titleValue,
-        jefeValue,
-        gradoValue,
-        selectText,
-        añoValue,
-        gerenteValue,
-        resumenValue,
-    } = formValues;
-    const { } = await supabase.from("forms").insert({
-        title: titleValue,
-        created_by: user.id,
-        degree: gradoValue,
-        specialty: selectText,
-        year: añoValue,
-        manager: gerenteValue,
-        resume: resumenValue,
-    });
+    // const {
+    //     titleValue,
+    //     jefeValue,
+    //     gradoValue,
+    //     selectText,
+    //     añoValue,
+    //     gerenteValue,
+    //     resumenValue,
+    // } = formValues;
+    // const { } = await supabase.from("forms").insert({
+    //     title: titleValue,
+    //     created_by: user.id,
+    //     degree: gradoValue,
+    //     specialty: selectText,
+    //     year: añoValue,
+    //     manager: gerenteValue,
+    //     resume: resumenValue,
+    // });
 
-    console.log(user);
+    // console.log(user);
 };
 
 //REGISTRAR USUARIOS
