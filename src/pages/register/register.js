@@ -16,8 +16,6 @@ const passwordInput = document.getElementById("password");
 //BOTON RESGISTRARSE
 const button = document.getElementById("btn");
 
-
-
 button.addEventListener("click", () => {
     //VARIABLES CON LOS VALORES DEL FORMULARIO
     let emailValue = emailInput.value;

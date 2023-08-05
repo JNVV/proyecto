@@ -10,26 +10,18 @@ const apiKey =
 export const supabase = createClient(url, apiKey);
 
 //FUNCION PARA CONSULTAR LOS DATOS Y MOSTRARLOS
-export const dataTable = () => {
-    async function fetchData() {
-        const { data, error } = await supabase.from('especialidades').select('*');
-      
-        if (error) {
-          console.error('Error al obtener los datos:', error);
-          return;
-        }
-    
-        console.log('Datos de usuarios:', data);
-      }
-      fetchData();
-}
+export const getDataTable = async () => {
+    const { data, error } = await supabase.from("especialidades").select();
+
+    console.log(data)
+
+};
 
 //FUNCIÓN QUE GUARDA LOS DATOS DEL FORMULARIO EN LA TABLA FORMS
 export const saveTask = async (formValues) => {
     // const {
     //     data: { user },
     // } = await supabase.auth.getUser();
-
     // const {
     //     titleValue,
     //     jefeValue,
@@ -48,7 +40,6 @@ export const saveTask = async (formValues) => {
     //     manager: gerenteValue,
     //     resume: resumenValue,
     // });
-
     // console.log(user);
 };
 
@@ -102,7 +93,6 @@ export const loginUser = async (emailValue = "", passwordValue = "") => {
         });
 
         return;
-
     } else if (!(passwordValue.length > 6)) {
         formValidations({
             message: "the password is invalid",
@@ -124,9 +114,8 @@ export const loginUser = async (emailValue = "", passwordValue = "") => {
 
     if (error) {
         formValidations({
-            message: "Invalid login credentials"
-
-        })
+            message: "Invalid login credentials",
+        });
         return;
     }
 

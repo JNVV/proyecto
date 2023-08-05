@@ -1,5 +1,5 @@
 //IMPORTANDO FUNCIONES DE SUPABASE
-import { authChecking, dataTable, saveTask } from "../../supabase/actions";
+import { authChecking, getDataTable, saveTask } from "../../supabase/actions";
 
 authChecking().then((user) => {
     if (!user) {
@@ -19,7 +19,8 @@ const button = document.getElementById("btn");
 
 //BOTON ENVIAR FORMULARIO
 button.addEventListener("click", () => {
-    dataTable();
+    getDataTable();
+
     // //VARIABLES CON LOS VALORES DEL FORMULARIO
     // let titleValue = title.value;
     // let jefeValue = jefe.value;
