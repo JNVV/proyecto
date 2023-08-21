@@ -15,23 +15,23 @@ const grado = document.getElementById("selectGrado");
 const especialidad = document.getElementById("selectInput");
 const año = document.getElementById("añoInput");
 const gerente = document.getElementById("gerenteInput");
-// const cargo = document.getElementById("cargoInput");
+const cargo = document.getElementById("cargoInput");
 const resumen = document.getElementById("resumenInput");
 const button = document.getElementById("btn");
 
 //OBTENIENDO LOS DATOS DE LA TABLA ESPECIALIDADES
 getDateEsp().then((dateEsp) => {
-    dateEsp.forEach(({id, nombre}) => {
+    dateEsp.forEach(({ id, nombre }) => {
         const option = document.createElement("option")
         option.textContent = nombre;
         option.value = id;
 
         especialidad.appendChild(option)
     })
-})  
+})
 
 getDateDegree().then((dateDegree) => {
-    dateDegree.forEach(({id, nombre}) =>{
+    dateDegree.forEach(({ id, nombre }) => {
         const option = document.createElement("option")
         option.textContent = nombre;
         option.value = id;
@@ -40,8 +40,8 @@ getDateDegree().then((dateDegree) => {
     })
 })
 
-
 //BOTON ENVIAR FORMULARIO
+
 button.addEventListener("click", () => {
     //VARIABLES CON LOS VALORES DEL FORMULARIO
     let titleValue = title.value;
@@ -50,18 +50,29 @@ button.addEventListener("click", () => {
     let espValue = parseInt(especialidad.options[especialidad.selectedIndex].value)
     let añoValue = año.value;
     let gerenteValue = gerente.value;
+    let cargoValue = cargo.value;
     let resumenValue = resumen.value;
 
-    // FUNCIÓN QUE ALMACENA Y ENVIA LOS DATOS DE LA SOLICITUD A LA BASE DE DATOS
-    saveTask({
-        titleValue,
-        jefeValue,
-        gradoValue,
-        espValue,
-        añoValue,
-        gerenteValue,
-        resumenValue,
-    });
+    //VALIDACIÓN DEL FORMULARIO
+    document.getElementById("form").addEventListener("submit", function(event){
+        if (!event.target.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();    
+        }
+        event.target.classList.add('was-validated');
 
+        saveTask({
+            titleValue,
+            jefeValue,
+            gradoValue,
+            espValue,
+            añoValue,
+            gerenteValue,
+            cargoValue,
+            resumenValue,
+        });
+        event.preventDefault();
+
+    }) 
 });
 

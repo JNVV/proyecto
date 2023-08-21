@@ -18,11 +18,10 @@ export const getDateEsp = async () => {
 
 //FUNCION PARA CONSULTAR LOS DATOS DE LA TABLA GRADOS
 export const getDateDegree = async () => {
-    const {data, error} = await supabase.from("grados").select();
+    const { data, error } = await supabase.from("grados").select();
 
     return data;
 }
-
 
 //FUNCIÓN QUE GUARDA LOS DATOS DEL FORMULARIO EN LA TABLA FORMS
 export const saveTask = async (formValues) => {
@@ -37,19 +36,25 @@ export const saveTask = async (formValues) => {
         espValue,
         añoValue,
         gerenteValue,
+        cargoValue,
         resumenValue,
+
     } = formValues;
     const { error } = await supabase.from("forms").insert({
+        userid: user.id,
         title: titleValue,
-        created_by: user.id,
+        author: jefeValue,
         degree: gradoValue,
         specialty: espValue,
-        year: añoValue,
+        date: añoValue,
         manager: gerenteValue,
+        rol: cargoValue,
         resume: resumenValue,
+
     });
 
     console.log(formValues);
+    console.log(error);
 };
 
 //REGISTRAR USUARIOS
