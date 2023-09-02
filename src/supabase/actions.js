@@ -143,3 +143,39 @@ export const logOut = async () => {
     const { error } = await supabase.auth.signOut();
     window.location.href = "../../../index.html";
 };
+
+//ADMINISTRADOR
+const tables = document.querySelector("#tableBody");
+;
+export const ShowData = async () => {
+    const { data, error } = await supabase.from("forms").select("*")
+
+    console.log(data);
+
+    if (error) {
+        console.log(error)
+        return;
+    }
+
+    tableBody.innerHTML = '';
+
+    data.forEach(item => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+        <td>${item.id}</td>
+        <td>${item.title}</td>
+        <td>${item.degree}</td>
+        <td>${item.specialty}</td>
+        <td>${item.userid}</td>
+        <td>${item.resume}</td>
+        <td>${item.author}</td>
+        <td>${item.date}</td>
+        <td>${item.rol}</td>
+        <td>${item.manager}</td>
+        `;
+        tables.appendChild(row);
+    })
+
+}
+
+
