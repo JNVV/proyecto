@@ -38,9 +38,11 @@ export const saveTask = async (formValues) => {
         gerenteValue,
         cargoValue,
         resumenValue,
-
     } = formValues;
-    const { error } = await supabase.from("forms").insert({
+
+    console.log(formValues)
+
+    const { data, error } = await supabase.from("forms").insert({
         userid: user.id,
         title: titleValue,
         author: jefeValue,
@@ -53,8 +55,8 @@ export const saveTask = async (formValues) => {
 
     });
 
-    console.log(formValues);
-    console.log(error);
+    // console.log(data)
+    error && console.log(error);
 };
 
 //REGISTRAR USUARIOS

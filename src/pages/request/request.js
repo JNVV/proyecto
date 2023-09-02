@@ -4,6 +4,27 @@ import { authChecking, getDateEsp, getDateDegree, saveTask } from "../../supabas
 authChecking().then((user) => {
     if (!user) {
         window.location.href = "../../../index.html";
+    } else {
+        //OBTENIENDO LOS DATOS DE LA TABLA ESPECIALIDADES
+        getDateEsp().then((dateEsp) => {
+            dateEsp.forEach(({ id, nombre }) => {
+                const option = document.createElement("option")
+                option.textContent = nombre;
+                option.value = id;
+
+                especialidad.appendChild(option)
+            })
+        })
+
+        getDateDegree().then((dateDegree) => {
+            dateDegree.forEach(({ id, nombre }) => {
+                const option = document.createElement("option")
+                option.textContent = nombre;
+                option.value = id;
+
+                grado.appendChild(option)
+            })
+        })
     }
 });
 
@@ -19,30 +40,11 @@ const cargo = document.getElementById("cargoInput");
 const resumen = document.getElementById("resumenInput");
 const button = document.getElementById("btn");
 
-//OBTENIENDO LOS DATOS DE LA TABLA ESPECIALIDADES
-getDateEsp().then((dateEsp) => {
-    dateEsp.forEach(({ id, nombre }) => {
-        const option = document.createElement("option")
-        option.textContent = nombre;
-        option.value = id;
-
-        especialidad.appendChild(option)
-    })
-})
-
-getDateDegree().then((dateDegree) => {
-    dateDegree.forEach(({ id, nombre }) => {
-        const option = document.createElement("option")
-        option.textContent = nombre;
-        option.value = id;
-
-        grado.appendChild(option)
-    })
-})
 
 //BOTON ENVIAR FORMULARIO
 
-button.addEventListener("click", () => {
+document.getElementById("form").addEventListener("submit", (event) => {
+    event.preventDefault()
     //VARIABLES CON LOS VALORES DEL FORMULARIO
     let titleValue = title.value;
     let jefeValue = jefe.value;
@@ -54,25 +56,21 @@ button.addEventListener("click", () => {
     let resumenValue = resumen.value;
 
     //VALIDACIÓN DEL FORMULARIO
-    document.getElementById("form").addEventListener("submit", function(event){
-        if (!event.target.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();    
-        }
+    if (!event.target.checkValidity()) {
+        console.log("NO DEBERIA ENVIARSE")
         event.target.classList.add('was-validated');
+        return
+    }
 
-        saveTask({
-            titleValue,
-            jefeValue,
-            gradoValue,
-            espValue,
-            añoValue,
-            gerenteValue,
-            cargoValue,
-            resumenValue,
-        });
-        event.preventDefault();
-
-    }) 
+    saveTask({
+        titleValue,
+        jefeValue,
+        gradoValue,
+        espValue,
+        añoValue,
+        gerenteValue,
+        cargoValue,
+        resumenValue,
+    });
 });
 
