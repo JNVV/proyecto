@@ -147,10 +147,17 @@ export const logOut = async () => {
 };
 
 //ADMINISTRADOR
-const tables = document.querySelector("#tableBody");
-;
 export const ShowData = async () => {
-    const { data, error } = await supabase.from("forms").select("*")
+    const tables = document.querySelector("#tableBody");
+
+    // const { data, error } = await supabase.from("froms").select().eq("id", id)
+    const { data, error } = await supabase.from("forms").select(`
+        id,
+        title,
+        grados (
+            nombre
+        )
+    `)
 
     console.log(data);
 
@@ -166,7 +173,7 @@ export const ShowData = async () => {
         row.innerHTML = `
         <td>${item.id}</td>
         <td>${item.title}</td>
-        <td>${item.degree}</td>
+        <td>${item.grados.nombre}</td>
         <td>${item.specialty}</td>
         <td>${item.userid}</td>
         <td>${item.resume}</td>
