@@ -148,42 +148,101 @@ export const logOut = async () => {
 
 //ADMINISTRADOR
 export const ShowData = async () => {
+    //OBTENIENDO LA TABLA DEL DOCUMENTO HTML 
     const tables = document.querySelector("#tableBody");
 
-    // const { data, error } = await supabase.from("froms").select().eq("id", id)
+    //CONSULTA PARA OBTENER LA INFORMACIÓN DE LAS TABLAS FORMS, GRADOS Y ESPECIALIDADES
     const { data, error } = await supabase.from("forms").select(`
         id,
         title,
         grados (
             nombre
-        )
+        ),
+        especialidades (
+            nombre
+        ),
+        userid,
+        resume,
+        author,
+        date, 
+        rol,
+        manager,
+        state
     `)
 
-    console.log(data);
 
     if (error) {
         console.log(error)
         return;
     }
 
+    //LIMPIA LA TABLA ANTES DE AGREGAR NUEVOS DATOS
     tableBody.innerHTML = '';
 
+    //INSERTA LOS DATOS EN FILAS DE HTML
     data.forEach(item => {
         const row = document.createElement("tr");
         row.innerHTML = `
         <td>${item.id}</td>
         <td>${item.title}</td>
         <td>${item.grados.nombre}</td>
-        <td>${item.specialty}</td>
+        <td>${item.especialidades.nombre}</td>
         <td>${item.userid}</td>
         <td>${item.resume}</td>
         <td>${item.author}</td>
         <td>${item.date}</td>
         <td>${item.rol}</td>
         <td>${item.manager}</td>
+        <td>${item.state ? "APROBADO" : "POR APROBAR"}</td>        
+        <td><button  class="btn btn-success toggle-button" data-row-id="${item.id}" state="${item.state}">APROBAR</button></td>
         `;
         tables.appendChild(row);
+    });
+
+    const controlButton = document.querySelectorAll(".toggle-button")
+    controlButton.forEach(button => {
+        button.addEventListener("click",  async () => {
+            const rowId = button.getAttribute("data-row-id")
+            const stateValue = button.getAttribute("state")
+            
+            const {data, error} = await supabase
+                .from("forms")
+                .update({
+                    state: !stateValue
+                })
+                .eq("id", rowId)
+                
+                console.log(data, error);
+        })
     })
+
+    //CONTROLADOR DE EVENTOS A LOS BOTONES DE CAMBIO DEL VALOR BOOLEANO
+    // const controlButtons = document.querySelectorAll(".toggle-button");
+    // controlButtons.forEach(button => {
+    //     button.addEventListener("click", async () => {
+    //         const rowId = button.getAttribute("data-row-id");
+    //         const rowData = data.find(item => item.id === rowId);
+    //         const newValue = !rowData.state;
+
+    //         //CAMBIA EL VALOR BOOLEAN EN LA BASE DE DATOS
+    //         const { error } = await supabase
+    //             .from("forms")
+    //             .update({ state: newValue })
+    //             .eq("id", rowId)
+
+    //         if (error) {
+    //             console.log(error);
+    //             return;
+    //         }
+
+    //         //CAMBIA EL VALOR EN LA TABLA HTML
+    //         rowData.state = newValue;
+    //         button.closest("tr").querySelector("td:nth-child(3)").textContent = newValue ? "APROBADO" : "POR APROBAR";
+
+    //     });
+
+
+    // });
 
 }
 
