@@ -203,7 +203,9 @@ export const ShowData = async () => {
     controlButton.forEach(button => {
         button.addEventListener("click",  async () => {
             const rowId = button.getAttribute("data-row-id")
-            const stateValue = button.getAttribute("state")
+            let stateValue = button.getAttribute("state")
+            
+            stateValue = stateValue == "false" ? false : true
             
             const {data, error} = await supabase
                 .from("forms")
@@ -211,8 +213,8 @@ export const ShowData = async () => {
                     state: !stateValue
                 })
                 .eq("id", rowId)
-                
-                console.log(data, error);
+
+            ShowData()
         })
     })
 
