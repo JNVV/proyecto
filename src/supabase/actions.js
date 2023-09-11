@@ -95,7 +95,6 @@ export const authChecking = async () => {
         data: { session },
         error,
     } = await supabase.auth.getSession();
-    console.log(session, error);
 
     return session;
 };
@@ -147,7 +146,7 @@ export const logOut = async () => {
 };
 
 //ADMINISTRADOR
-export const ShowData = async () => {
+export const ShowData = async (type) => {
     //OBTENIENDO LA TABLA DEL DOCUMENTO HTML 
     const tables = document.querySelector("#tableBody");
 
@@ -168,7 +167,9 @@ export const ShowData = async () => {
         rol,
         manager,
         state
-    `)
+    `).eq(
+        "state", type
+    )
 
 
     if (error) {
@@ -194,20 +195,20 @@ export const ShowData = async () => {
         <td>${item.rol}</td>
         <td>${item.manager}</td>
         <td>${item.state ? "APROBADO" : "POR APROBAR"}</td>        
-        <td><button  class="btn btn-success toggle-button" data-row-id="${item.id}" state="${item.state}">APROBAR</button></td>
+        <td><button class="btn btn-success toggle-button" data-row-id="${item.id}" state="${item.state}">APROBAR   </button></td>
         `;
         tables.appendChild(row);
     });
 
     const controlButton = document.querySelectorAll(".toggle-button")
     controlButton.forEach(button => {
-        button.addEventListener("click",  async () => {
+        button.addEventListener("click", async () => {
             const rowId = button.getAttribute("data-row-id")
             let stateValue = button.getAttribute("state")
-            
+
             stateValue = stateValue == "false" ? false : true
-            
-            const {data, error} = await supabase
+
+            const { data, error } = await supabase
                 .from("forms")
                 .update({
                     state: !stateValue
@@ -218,34 +219,8 @@ export const ShowData = async () => {
         })
     })
 
-    //CONTROLADOR DE EVENTOS A LOS BOTONES DE CAMBIO DEL VALOR BOOLEANO
-    // const controlButtons = document.querySelectorAll(".toggle-button");
-    // controlButtons.forEach(button => {
-    //     button.addEventListener("click", async () => {
-    //         const rowId = button.getAttribute("data-row-id");
-    //         const rowData = data.find(item => item.id === rowId);
-    //         const newValue = !rowData.state;
-
-    //         //CAMBIA EL VALOR BOOLEAN EN LA BASE DE DATOS
-    //         const { error } = await supabase
-    //             .from("forms")
-    //             .update({ state: newValue })
-    //             .eq("id", rowId)
-
-    //         if (error) {
-    //             console.log(error);
-    //             return;
-    //         }
-
-    //         //CAMBIA EL VALOR EN LA TABLA HTML
-    //         rowData.state = newValue;
-    //         button.closest("tr").querySelector("td:nth-child(3)").textContent = newValue ? "APROBADO" : "POR APROBAR";
-
-    //     });
-
-
-    // });
 
 }
+
 
 
