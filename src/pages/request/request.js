@@ -1,11 +1,12 @@
-//IMPORTANDO FUNCIONES DE SUPABASE
+//IMPORTACIONES 
 import { authChecking, getDateEsp, getDateDegree, saveTask } from "../../supabase/actions";
 
+//CONDICIÓN PARA VERIFICAR LA AUTENTICACIÓN DE LOS USUARIOS
 authChecking().then((user) => {
     if (!user) {
         window.location.href = "../../../index.html";
     } else {
-        //OBTENIENDO LOS DATOS DE LA TABLA ESPECIALIDADES
+        //OBTENIENDO LOS DATOS DE LA TABLA ESPECIALIDADES DE LA BASE DE DATOS
         getDateEsp().then((dateEsp) => {
             dateEsp.forEach(({ id, nombre }) => {
                 const option = document.createElement("option")
@@ -15,7 +16,7 @@ authChecking().then((user) => {
                 especialidad.appendChild(option)
             })
         })
-
+          //OBTENIENDO LOS DATOS DE LA GRADOS DE LA BASE DE DATOS
         getDateDegree().then((dateDegree) => {
             dateDegree.forEach(({ id, nombre }) => {
                 const option = document.createElement("option")
@@ -41,8 +42,7 @@ const resumen = document.getElementById("resumenInput");
 const button = document.getElementById("btn");
 
 
-//BOTON ENVIAR FORMULARIO
-
+//BOTON PARA ENVIAR EL FORMULARIO
 document.getElementById("form").addEventListener("submit", (event) => {
     event.preventDefault()
     //VARIABLES CON LOS VALORES DEL FORMULARIO
@@ -61,7 +61,7 @@ document.getElementById("form").addEventListener("submit", (event) => {
         event.target.classList.add('was-validated');
         return
     }
-
+    //FUNCIÓN QUE ENVIA LOS DATOS DEL FORMULARIO A LA TABLA "FORMS" EN LA BASE DE DATOS 
     saveTask({
         titleValue,
         jefeValue,

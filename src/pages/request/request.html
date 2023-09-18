@@ -14,7 +14,9 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
+<!--CUERPO DEL SITIO WEB ( CONTENIDO )-->
 <body>
+    <!-- Reglas con estilos del body -->
     <style>
         body {
             background-color: #fcfaff;
@@ -22,15 +24,24 @@
         }
     </style>
 
+    <!-- Contendor principal -->
     <div class="container-fluid justify-content-center vh-100 ">
 
+        <!-- Contenedor con los campos del formulario -->
         <div class="container d-flex justify-content-center mt-3">
-            <form class=" bg-white row border rounded-3 p-4 m-2 shadow-lg needs-validation" novalidate style="width: 1000px;" id="form">
 
-                <div class="col-12">
+            <!-- La etiqueta <form> permite crear un formulario -->
+            <form class=" bg-white row border rounded-3 p-4 m-2 shadow-lg needs-validation" novalidate
+                style="width: 1000px;" id="form"> <!-- Estilos del formulario -->
+
+                <!-- Contenedor con los campos del formulario -->
+                <div class="col-12"> 
+
+                    <!-- <label> permite crear una etiqueta para un campo del formulario -->
                     <label for="nombreInput" class="form-label">Titulo del proyecto</label>
-                    <input type="text" class="form-control mb-3" id="nombreInput" required>
-                    <div class="invalid-feedback">Este campo es obligatorio</div>
+                    <!-- La etiqueta <input> crea un campo del formulario-->
+                    <input type="text" class="form-control mb-3" id="nombreInput" required> 
+                    <div class="invalid-feedback">Este campo es obligatorio</div> <!--Mensaje que se muestra cuando el campo se deja vacio-->
                 </div>
 
                 <div class="col-6">
@@ -42,7 +53,7 @@
                 <div class="col-6">
                     <label for="selectGrado" class="form-label">Grado</label>
                     <div class="mb-3">
-                        <select class="form-select" id="selectGrado"  required>
+                        <select class="form-select" id="selectGrado" required>
 
                         </select>
                         <div class="invalid-feedback">Este campo es obligatorio</div>
@@ -68,24 +79,27 @@
 
                 <div class="col-6">
                     <label for="gerenteInput" class="form-label">Gerente del proyecto</label>
-                    <input type="text" id="gerenteInput" placeholder="Gerente/Colaborador" class="form-control mb-3" required>
-                 
+                    <input type="text" id="gerenteInput" placeholder="Gerente/Colaborador" class="form-control mb-3"
+                        required>
+
                     <div class="invalid-feedback">Este campo es obligatorio</div>
                 </div>
 
                 <div class="col-6">
                     <label for="cargoInput" class="form-label">Cargo del gerente</label>
-                    <input type="text" id="cargoInput" placeholder="EJ: Administrador" class="form-control mb-3" required>
-                  
+                    <input type="text" id="cargoInput" placeholder="EJ: Administrador" class="form-control mb-3"
+                        required>
+
                     <div class="invalid-feedback">Este campo es obligatorio</div>
                 </div>
 
                 <div class="col-12">
                     <label for="resumenInput" class="form-label">Resumen de tu proyecto</label>
-                    <textarea id="resumenInput" placeholder="Describe cual es la problematica que se va a solucionar, de que manera y menciona todos los integrantes del proyecto." class="form-control mb-3"
-                        style="height: 100px; max-height: 100px;" required></textarea>
-                   
-                        <div class="invalid-feedback">Este campo es obligatorio</div>
+                    <textarea id="resumenInput"
+                        placeholder="Describe cual es la problematica que se va a solucionar, de que manera y menciona todos los integrantes del proyecto."
+                        class="form-control mb-3" style="height: 100px; max-height: 100px;" required></textarea>
+
+                    <div class="invalid-feedback">Este campo es obligatorio</div>
                 </div>
 
                 <div class="col-12">
@@ -97,7 +111,7 @@
 
     </div>
 
-
+    <!-- Script para enlazar al archivo request.js -->
     <script type="module" src="request.js"></script>
 </body>
 

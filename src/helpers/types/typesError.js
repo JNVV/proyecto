@@ -1,7 +1,8 @@
-
+//FUNCION PARA VALIDAR LOS ERRORES DEL REGISTRO E INICIO DE SESIÓN DE LOS USUARIOS
 export const typeErrors = (error) => {
     console.log(error)
 
+    //MENSAJES QUE DEBE MOSTRAR EL SITIO WEB SEGÚN EL ERROR QUE RECIBA
     const errors = {
         password: "La password digitada no es valida",
         valuesNull: "El correo y la contraseña son obligatorios",
@@ -10,6 +11,7 @@ export const typeErrors = (error) => {
         loginInvalid: "El email y/o la contraseña son incorrectos"
     }
 
+    //CONDICIÓN PARA DETERMINAR EL TIPO DE ERROR QUE SE ESTÁ PRESENTANDO
     if (error.message.includes("requires a valid password")) {
         return errors.password
     }

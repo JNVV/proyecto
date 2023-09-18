@@ -1,7 +1,7 @@
-//IMPORTANDO FUNCIONES DE SUPABASE
+//IMPORTACIONES
 import { authChecking, loginUser } from "../../supabase/actions";
 
-//FUNCION QUE REVISA SI HAY UNA SESION ACTIVA O NO
+//CONDICIÓN PARA VERIFICAR LA AUTENTICACIÓN DE LOS USUARIOS
 authChecking().then((user) => {
     if (user) {
         // console.log(authChecking)
@@ -22,6 +22,7 @@ button.addEventListener("click", () => {
     let emailValue = emailInput.value;
     let passwordValue = passwordInput.value;
 
+    //FUNCIÓN LOGIN USER DEL DOCUMENTO DE JAVASCRIPT "ACTIONS"
     loginUser(emailValue, passwordValue)
 })
 

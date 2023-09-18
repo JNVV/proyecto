@@ -1,7 +1,9 @@
-//CREEANDO EL CLIENTE DE SUPABASE
+//CREANDO EL CLIENTE E IMPORTANDO LIBRERIAS DE SUPABASE
+
 import { createClient } from "@supabase/supabase-js";
 import { formValidations } from "../helpers/formValidations";
 import { validateEmail } from "../helpers/validationEmail";
+
 
 const url = "https://zihdqesahqjkczvizvxx.supabase.co";
 const apiKey =
@@ -55,11 +57,10 @@ export const saveTask = async (formValues) => {
 
     });
 
-    // console.log(data)
     error && console.log(error);
 };
 
-//REGISTRAR USUARIOS
+// FUNCION PARA REGISTRAR USUARIOS
 export const createUser = async (emailValue = "", passwordValue = "") => {
     if (!emailValue.length > 0 || !(passwordValue.length > 0)) {
         formValidations({
@@ -89,7 +90,7 @@ export const createUser = async (emailValue = "", passwordValue = "") => {
     }
 };
 
-//ESTADO DE LAS SESIONES (REGISTRADO O NO)
+// FUNCIÓN QUE VERIFICA EL ESTADO DE LAS SESIONES (REGISTRADO O NO)
 export const authChecking = async () => {
     const {
         data: { session },
@@ -99,7 +100,7 @@ export const authChecking = async () => {
     return session;
 };
 
-//LOGEAR USUARIOS
+// FUNCIÓN PARA LOGEAR USUARIOS
 
 export const loginUser = async (emailValue = "", passwordValue = "") => {
     if (!(emailValue.length > 0) || !(passwordValue.length > 0)) {
@@ -139,14 +140,14 @@ export const loginUser = async (emailValue = "", passwordValue = "") => {
     window.location.href = "../../../index.html";
 };
 
-//CERRAR SESIONES
+// FUNCIÓN CERRAR SESIONES
 export const logOut = async () => {
     const { error } = await supabase.auth.signOut();
     window.location.href = "../../../index.html";
 };
 
-//ADMINISTRADOR
-export const ShowData = async (type) => {
+//FUCIONES PARA LA PAGINA DEL ADMINISTRADOR
+export const ShowData = async () => {
     //OBTENIENDO LA TABLA DEL DOCUMENTO HTML 
     const tables = document.querySelector("#tableBody");
 
@@ -168,7 +169,7 @@ export const ShowData = async (type) => {
         manager,
         state
     `).eq(
-        "state", type
+        "state", false
     )
 
 
@@ -180,7 +181,7 @@ export const ShowData = async (type) => {
     //LIMPIA LA TABLA ANTES DE AGREGAR NUEVOS DATOS
     tableBody.innerHTML = '';
 
-    //INSERTA LOS DATOS EN FILAS DE HTML
+    //RECORRE E INSERTA LOS DATOS EN FILAS DE HTML
     data.forEach(item => {
         const row = document.createElement("tr");
         row.innerHTML = `
@@ -200,6 +201,7 @@ export const ShowData = async (type) => {
         tables.appendChild(row);
     });
 
+    //BOTON QUE ALTERA EL VALOR DE LA COLUMNA "STATE" ENTRE "TRUE" O "FALSE" DE LA TABLA FORMS 
     const controlButton = document.querySelectorAll(".toggle-button")
     controlButton.forEach(button => {
         button.addEventListener("click", async () => {
@@ -222,5 +224,52 @@ export const ShowData = async (type) => {
 
 }
 
+//FUNCIÓN QUE MUESTRA LAS SOLICITUDES QUE HAN SIDO APROBADAS A LOS USUARIOS
+export const showTables = async () => {
+
+    //OBTENIENDO LA TABLA DEL DOCUMENTO HTML 
+    const table = document.querySelector("#tableUsers");
+
+    //CONSULTA PARA OBTENER LA INFORMACIÓN DE LAS TABLAS FORMS, GRADOS Y ESPECIALIDADES
+    const { data, error } = await supabase.from("forms").select(`
+    title,
+    author,
+    especialidades (
+        nombre
+    ),
+    resume,
+    date,
+    manager,
+    rol
+    `
+
+    ).eq(
+        "state", true
+    )
+
+    if (error) {
+        console.log(error);
+        return;
+    }
+
+    //LIMPIA LA TABLA ANTES DE AGREGAR NUEVOS DATOS
+    table.innerHTML = "";
+
+    // RECORRE E INSERTA LOS DATOS EN FILAS DE HTML
+    data.forEach(item => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+        <td>${item.title}</td>
+        <td>${item.author}</td>
+        <td>${item.especialidades.nombre}</td>
+        <td>${item.resume}</td>
+        <td>${item.date}</td>
+        <td>${item.manager}</td>
+        <td>${item.rol}</td>    
+        `
+        table.appendChild(row);
+    })
+}
+showTables();
 
 

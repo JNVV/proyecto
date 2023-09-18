@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AdminPage</title>
     <!--SCRIPT DE BOOSTRAP-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
@@ -12,34 +13,102 @@
     <!--ESTILOS DE BOOSTRAP-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!--LINK DE CSS-->    
+    <link rel="stylesheet" href="admin.css">
+     <!--FUENTES -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,600;1,300&display=swap"
+         rel="stylesheet">
 </head>
 
+<!--CUERPO DEL SITIO WEB ( CONTENIDO )-->
 <body>
+    <!--CONTENEDOR PRINCIPAL-->
     <div class="container-fluid">
-        <table class="table table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">TITULO</th>
-                    <th scope="col">GRADO</th>
-                    <th scope="col">ESPECIALIDAD</th>
-                    <th scope="col">ID-USUARIO</th>
-                    <th scope="col">RESUMEN</th>
-                    <th scope="col">JEFE DEL PROYECTO</th>
-                    <th scope="col">FECHA</th>
-                    <th scope="col">ROL</th>
-                    <th scope="col">MANAGER</th>
-                    <th scope="col">ESTADO</th>
-                    <th scope="col">OPCIONES</th>
-                </tr>
-            </thead>
-            <tbody id="tableBody">
 
-            </tbody>
-        </table>
-        <button type="button" id="btn" class="btn btn-success w-100">CERRAR SESIÓN</button>
+        <!--CONTENEDOR QUE TIENE EL TEXTO DEL SITIO WEB -->
+        <div class="container-fluid mb-3 mt-3 bg-white shadow" id="containerText">
+
+            
+            <h1> <!--La etiquta <h1> define el tamaño del texto siendo "h1" el más grande -->
+                INSTRUCCIONES:
+            </h1>
+
+            
+            <p> <!--La etiqueta <p> contiene parrafos del sitio web-->
+                En la siguente tabla podrá ver las solicitudes que los estudiantes han enviado para que información acerca de sus proyectos de grado sea mostrada en el sitio web, antes de aprobar que dichos proyectos sean subidos, asegurese de que la información en las campos de cada fila tenga sentido y no contenga ningun tipo de información inncesaria u obscena como malas palabras o datos personales no solicitados.
+            </p>
+
+            <p>
+                Si considera que la solicitud cumple con todos los requisitos y desea aprobarla, haga <b>CLICK</b> <!--La tiqueta <b> sirve para aplicar negrita a un texto--> sobre el botón verde que dice <b>APROBAR</b>,  una vez pulse el botón la solicitud se subira inmediatamanete al sitio web y dejará de mostrarse en la tabla.
+            </p>
+
+            <p>
+                <b>SI NO</b> desea autorizar que una solicitud sea subida no presione ningún botón.
+            </p>
+
+            <h1>
+                RECOMENDACIONES:
+                
+            </h1>
+
+            <p>
+                <ul> <!--La etiqueta <ul> crea una lista desordenada, es decir sin enumeración-->
+
+                    <li>Antes de aprobar una solicitud, debe estar <b>100% SEGURO</b> de que esta cumple con los requisitos, pues no podrá cancelar dicha acción. 
+                    </li> <!--la tiqueta <li> agrega una viñeta a la lista -->
+
+                    <li>
+                        <b>NO</b> le brinde su correo y contraseña a nadie más, esto para garantizar el correcto funcionamiento del sitio web y asegurar la protección de los datos a los que se tiene acceso.
+                    </li>
+
+                    <li>
+                        Si necesita ayuda, la página presenta errores, tiene dudas de como funciona o cometio sin intención algún error como los mencionados anteriormente, comuniquese al siguiente número: <b>3015693492</b>
+                    </li>
+                </ul>
+            </p>
+        </div>
+
+        <!--Contenedor de la tabla con las solicitudes de los estudiantes-->
+        <div class="table-responsive">
+            <!--la etiqueta <table> crea la estructura basica de una tabla-->
+            <table class="table table-bordered table-hover table-sm align-middle">
+                <!--La etiqueta <thead> sirve para crear los titulos o la cabeza de una tabla -->
+                <thead>
+                    <tr> <!--La etiqueta <tr> permite agregar una fila a la tabla-->
+
+                        <th scope="col">ID</th> <!-- <th> agrega un encabezado  -->
+                        <th scope="col">TITULO</th>
+                        <th scope="col">GRADO</th>
+                        <th scope="col">ESPECIALIDAD</th>
+                        <th scope="col">ID-USUARIO</th>
+                        <th scope="col">RESUMEN</th>
+                        <th scope="col">JEFE DEL PROYECTO</th>
+                        <th scope="col">FECHA</th>
+                        <th scope="col">ROL</th>
+                        <th scope="col">MANAGER</th>
+                        <th scope="col">ESTADO</th>
+                        <th scope="col">OPCIONES</th>
+                    </tr>
+                </thead>
+                <!-- La etiqueta <tbody> crea el cuerpo de la tabla o contenido-->
+                <tbody id="tableBody">
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- contendor con el boton para cerrar sesión -->
+        <div class="container-fluid">
+            <button type="button" id="btn" class="btn btn-success w-100">CERRAR SESIÓN</button>
+        </div>
+
     </div>
-
+    <!-- El script enlaza el documento html con uno de javascript que contiene las instrucciones para el funcionamiento de la pagina-->
     <script src="admin.js" type="module"></script>
 </body>
 
