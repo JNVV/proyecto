@@ -16,7 +16,7 @@ authChecking().then((user) => {
                 especialidad.appendChild(option)
             })
         })
-          //OBTENIENDO LOS DATOS DE LA GRADOS DE LA BASE DE DATOS
+        //OBTENIENDO LOS DATOS DE LA GRADOS DE LA BASE DE DATOS
         getDateDegree().then((dateDegree) => {
             dateDegree.forEach(({ id, nombre }) => {
                 const option = document.createElement("option")
@@ -40,6 +40,12 @@ const gerente = document.getElementById("gerenteInput");
 const cargo = document.getElementById("cargoInput");
 const resumen = document.getElementById("resumenInput");
 const button = document.getElementById("btn");
+
+//OBTENIENDO EL MODAL
+const modal = document.getElementById("myModal")
+
+//OTENIENDO EL BOTÓN PARA CERRAR EL MODAL
+const cerrarModal = document.getElementById("btnCerrarModal")
 
 
 //BOTON PARA ENVIAR EL FORMULARIO
@@ -72,5 +78,14 @@ document.getElementById("form").addEventListener("submit", (event) => {
         cargoValue,
         resumenValue,
     });
+    modal.style.display = "block";
 });
+
+//BOTON PARA CERRAR EL MODAL
+
+cerrarModal.addEventListener("click", () => {
+    modal.style.display = "none";
+
+    window.history.back();
+})
 
