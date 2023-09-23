@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--BOOSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="electricidad.css">
+
+
+    <!--FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,600;1,300&display=swap"
+        rel="stylesheet">
+
+    <!--FONT AWESOME-->
+    <script src="https://kit.fontawesome.com/8f928163bf.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container mt-3">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow" style="background-color: #51f948;" id="nav">
+            <div class="container-fluid">
+                <!-- <a class="navbar-brand" href="#">
+                    <img src="img/ESCU.png" alt="logo" width="80px">
+                </a> -->
+                <!--MENU DE NAVEGACIÓN-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!--CONTENEDOR DEL MENÚ DE NAVEGACION CON LOS DIFERENTES LINKS DE CADA ESPECIALIDAD-->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <!--SE ESTABLE EL LINK DE INCIO Y EL NOMBRE QEU SE VA A VER EN EL MENÚ-->
+                            <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <!--SE ESTABLESE EL LINK DE SISTEMAS Y COMPUTACIÓN Y EL NOMBRE QEU SE VA A VER EN EL MENÚ DE NAVEGACIÓN-->
+                            <a class="nav-link" href="../Sistemas/sistemas.html">Sistemas y Computación</a>
+                        </li>
+                        <li class="nav-item">
+                            <!--SE ESTABLESE EL LINK DE DIBUJO TÉCNICO Y EL NOMBRE QEU SE VA A VER EN EL MENÚ DE NAVEGACIÓN-->
+                            <a class="nav-link" href="#">Dibujo Técnico</a>
+                        </li>
+                        <li class="nav-item">
+                            <!--SE ESTABLESE EL LINK DE METALISTERIA Y EL NOMBRE QEU SE VA A VER EN EL MENÚ DE NAVEGACIÓN-->
+                            <a class="nav-link" href="#">Metalistería</a>
+                        </li>
+                        <li class="nav-item">
+                            <!--SE ESTABLESE EL LINK DE MECANICA AUTOMOTRIZ Y EL NOMBRE QEU SE VA A VER EN EL MENÚ DE NAVEGACIÓN-->
+                            <a class="nav-link" href="../automotriz/automotriz.html">Mecánica Automotriz</a>
+                        </li>
+                        <li class="nav-item">
+                            <!--SE ESTABLESE EL LINK DE MECÁNICA INDUSTRIAL Y EL NOMBRE QEU SE VA A VER EN EL MENÚ DE NAVEGACIÓN-->
+                            <a class="nav-link" href="../m.industrial/m.idustrial.html">Mecánica Industrial</a>
+                        </li>
+                        <li class="nav-item">
+                            <!--SE ESTABLESE EL LINK DE ELECTRICIDAD Y EL NOMBRE QEU SE VA A VER EN EL MENÚ DE NAVEGACIÓN-->
+                            <a class="nav-link" href="#">Electricidad</a>
+                        </li>
+                        <li class="nav-item">
+                            <!--SE ESTABLESE EL LINK DE ELECTRÓNICA Y EL NOMBRE QEU SE VA A VER EN EL MENU DE NAVEGACIÓN -->
+                            <a class="nav-link" href="../electronica/electronica.html">Electrónica</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../projects/projects.html">Proyectos de grado</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav id="nav1">
+            <h1>ELECTRICIDAD</h1>
+        </nav>
+        <!--IMAGENES DEL CARRUSEL DE LA ESPECIALIDAD-->
+        <div id="carouselExampleControls" class="carousel slide shadow" data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <!-- AQUI SE AGRAGA LA IMAGEN PARA SU VISUALIZACIÓN EN EL src="img/img.industrial/1.jpg"-->
+                    <img id="img1" src="ELECTRICIDAD/IMG (16).jpg" class="d-block" alt="..." width="100%">
+                </div>
+                <div class="carousel-item">
+                    <!--AQUI SE AGRAGA LA IMAGEN PARA SU VISUALIZACIÓN EN EL src="img/img.industrial/2.jpg"-->
+                    <img id="img1" src="ELECTRICIDAD/IMG (15).jpg" class="d-block" alt="..." width="100%">
+                </div>
+                <div class="carousel-item">
+                    <!--AQUI SE AGRAGA LA IMAGEN PARA SU VISUALIZACIÓN EN EL src="img/img.industrial/3.jpg"-->
+                    <img id="img1" src="ELECTRICIDAD/IMG (17).jpg" class="d-block" alt=".." width="100%">
+                </div>
+
+                <!--BOTONES DEL CARRUSEL PARA QUE SE DESPALCE ASI LA SIGUIENTE IMAGEN O ASI LA ANTERIOR IMAGEN-->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+            <div class="container-fluid justify-content-center" id="contenedorText">
+                <!--INFORMACION DEL TALLER DE MECANICA INDUSTRIAL-->
+
+                <!-- INTRODUCIÓN DEL AREA-->
+                <H2>INTRODUCCIÓN</H2>
+                <div class="thumbnail">
+                    <img src="ELECTRICIDAD/introduccion.jpg" alt="Miniatura" width="260" height="240">
+                </div>
+                <p>El desarrollo de la infraestructura tecnológica del país y la sociedad contemporánea, en lo
+                    relacionado con generación, transmisión y usos varios de la electricidad, está creando una serie de
+                    necesidades de carácter técnico que amerita preparar individuos con capacidades y habilidades
+                    optimas en el área, y que, en dado caso, actúen con propiedad en la solución y manejo de situaciones
+                    relacionadas con el área eléctrica.
+
+                    El programa académico del taller de electricidad, además de constituir el currículo educativo del
+                    área técnica, busca facilitar la comprensión del conocimiento y adiestramiento del estudiante en las
+                    diversas ramas de la electricidad como son: los electrodomésticos, la instalación de redes urbanas y
+                    rurales, el mantenimiento de los mismos, el montaje de motores y mandos eléctricos. Conocimientos
+                    con los cuales se esperan sean valiosos elementos para su vida futura.
+
+                    Además, el estudio de esta asignatura permite formar ciudadanos que reconozcan y resuelvan
+                    conflictos de su comunidad, por ello la función por excelencia de la institución es facilitar la
+                    comprensión de las diversas situaciones que se generan en distintos contextos socio culturales
+                    propios de la cotidianidad o a lo que se domina orden universal.
+                    En consecuencia, en la asignatura de electricidad, está orientada principalmente al desarrollo de
+                    las competencias laborales de emprendimiento, debido a que el objetivo de la asignatura es enseñar y
+                    mejorar la capacidad de integración de individuo a ambientes académicos y laborales. </p>
+                <!--(a[src="#imagen$"]>img[src="uno.jpg"])*-->
+                <!--JUSTIFICACION DEL AREA-->
+                <h2>JUSTIFICACIÓN</h2>
+                <div class="thumbnail1">
+                    <img src="ELECTRICIDAD/introduccion2.jpg" alt="Miniatura" width="260" height="240">
+                </div>
+                <p>
+                    La especialidad de electricidad se creó para brindar al sector eléctrico la posibilidad de
+                    incorporar personal con altas calidades laborales y profesionales que contribuyan al desarrollo
+                    económico, social y tecnológico de su entorno y del país, así mismo ofrecer a los estudiantes en las
+                    tecnologías de producción eléctrica industrial.
+                    En las diferentes regiones del país se cuenta con potencial productivo en aéreas de las
+                    instalaciones eléctricas domiciliarias su fortalecimiento y crecimiento socio-económico tanto a
+                    nivel regional como nacional, dependen en gran medida de un recurso humano cualificado y calificado,
+                    capaz de responder integralmente a la dinámica del sector.
+                    La malla curricular está orientado hacia la adquisición por parte del estudiante, de las
+                    competencias necesarias requeridas por el sector Eléctrico, las cuales deben fomentar su capacidad
+                    creativa para resolver problemas, su carácter innovador para crear empresa, pero sobre todo;
+                    contribuir en la ejecución de las instalaciones eléctricas residenciales aplicando la normatividad
+                    vigente, que lo acreditan y lo hacen pertinente y coherente con su misión, innovando permanentemente
+                    de acuerdo con las tendencias y cambios tecnológicos y las necesidades del sector empresarial y de
+                    los trabajadores, impactando positivamente la productividad, la competitividad, la equidad y el
+                    desarrollo del país.
+                </p>
+
+                <!--OBJETIVOS DEL AREA: OBJETIVO GENERAL Y ESPECIFICOS-->
+                <h2>
+                    OBJETIVOS Y METAS DE APRENDIZAJE
+                </h2>
+                <!-- se crea un acordion plegable para los objetivos -->
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Objetivos Generales
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul>
+
+                                    <li>
+                                        <p>
+                                            Desarrollar habilidades y destrezas con las cuales el educando, este en
+                                            capacidad de reconocer, interpretar y manejar los diversos temas que se
+                                            implementan en la programación académica, de la asignatura durante los
+                                            diferentes grados del bachillerato definidas por equipo docente quienes se
+                                            encargaran de ir realizando el seguimiento y la evaluación permanente de los
+                                            planes y acciones para saber si lo que se ha hecho permite alcanzar las
+                                            metas y los resultados propuestos, y los ajustes que se deben introducir.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Objetivos Especificos
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>
+                                        <p>Realizar la Planificación estratégica a mediano y largo plazo de las diversas
+                                            actividades académica, para así, garantizar los procesos de Apoyo a la
+                                            gestión educativa, administración de la planta física y de los recursos,
+                                            para lograr un buen funciona- miento del taller y una adecuada prestación de
+                                            los servicios.</p>
+                                    </li>
+                                    <li>
+                                        <p>Crear habilidades y destrezas necesarias para realizar actividades vinculadas
+                                            a la electricidad.</p>
+                                    </li>
+                                    <li>
+                                        <p>Desarrollar conceptos teóricos básicos respectivos con la aplicación de la
+                                            electricidad.</p>
+                                    </li>
+                                    <li>
+                                        <p>Comprender los conocimientos eléctricos que se relacionan con las diversas
+                                            clases de motores eléctricos empleados en el hogar y la industria.</p>
+                                    </li>
+                                    <li>
+                                        <p>Reconocer las reglas básicas de seguridad al momento de trabajar con
+                                            electricidad.</p>
+                                    </li>
+                                    <li>
+                                        <p>Transformar y mejorar la Calidad Educativa planeando las herramientas
+                                            esenciales para liderar, articular y coordinar todas las acciones
+                                            institucionales</p>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--creacion de la galeria-->
+                <span class="linea"></span>
+                <section class="galeria">
+                    <!-- se agregan las imgenes a la galeria y se vinculan entre -->
+                    <a href="#image1"><img src="ELECTRICIDAD/IMG (1).jpg" alt=""></a>
+                    <a href="#image2"><img src="ELECTRICIDAD/IMG (2).jpg" alt=""></a>
+                    <a href="#image3"><img src="ELECTRICIDAD/IMG (3).jpg" alt=""></a>
+                    <a href="#image4"><img src="ELECTRICIDAD/IMG (4).jpg" alt=""></a>
+                    <a href="#image5"><img src="ELECTRICIDAD/IMG (5).jpg" alt=""></a>
+                    <a href="#image6"><img src="ELECTRICIDAD/IMG (6).jpg" alt=""></a>
+                    <a href="#image7"><img src="ELECTRICIDAD/IMG (7).jpg" alt=""></a>
+                    <a href="#image8"><img src="ELECTRICIDAD/IMG (8).jpg" alt=""></a>
+                    <a href="#image9"><img src="ELECTRICIDAD/IMG (9).jpg" alt=""></a>
+                    <a href="#image10"><img src="ELECTRICIDAD/IMG (10).jpg" alt=""></a>
+                    <a href="#image11"><img src="ELECTRICIDAD/IMG (11).jpg" alt=""></a>
+
+
+                    <!-- se agregan las flechas para pasar de una imagen a otra y la X para salir -->
+
+                    <article class="light-box" id="image1">
+                        <a href="#image20" class="next"><i class="fa-solid fa-circle-chevron-left fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <img src="ELECTRICIDAD/IMG (1).jpg" alt="">
+                        <a href="#image2" class="next"><i class="fa-solid fa-circle-chevron-right fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <a href="#galeria" class="close"><i class="fa-solid fa-circle-xmark fa-2xl"
+                                style="color: #ff0000;"></i></a>
+                    </article>
+
+                    <article class="light-box" id="image2">
+                        <a href="#image1" class="next"><i class="fa-solid fa-circle-chevron-left fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <img src="ELECTRICIDAD/IMG (2).jpg" alt="">
+                        <a href="#image3" class="next"><i class="fa-solid fa-circle-chevron-right fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <a href="#galeria" class="close"><i class="fa-solid fa-circle-xmark fa-2xl"
+                                style="color: #ff0000;"></i></a>
+                    </article>
+
+                    <article class="light-box" id="image3">
+                        <a href="#image2" class="next"><i class="fa-solid fa-circle-chevron-left fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <img src="ELECTRICIDAD/IMG (3).jpg" alt="">
+                        <a href="#image4" class="next"><i class="fa-solid fa-circle-chevron-right fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <a href="#galeria" class="close"><i class="fa-solid fa-circle-xmark fa-2xl"
+                                style="color: #ff0000;"></i></a>
+                    </article>
+
+                    <article class="light-box" id="image4">
+                        <a href="#image3" class="next"><i class="fa-solid fa-circle-chevron-left fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <img src="ELECTRICIDAD/IMG (4).jpg" alt="">
+                        <a href="#image5" class="next"><i class="fa-solid fa-circle-chevron-right fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <a href="#galeria" class="close"><i class="fa-solid fa-circle-xmark fa-2xl"
+                                style="color: #ff0000;"></i></a>
+                    </article>
+
+                    <article class="light-box" id="image5">
+                        <a href="#image4" class="next"><i class="fa-solid fa-circle-chevron-left fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <img src="ELECTRICIDAD/IMG (5).jpg" alt="">
+                        <a href="#image6" class="next"><i class="fa-solid fa-circle-chevron-right fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <a href="#galeria" class="close"><i class="fa-solid fa-circle-xmark fa-2xl"
+                                style="color: #ff0000;"></i></a>
+                    </article>
+                    <article class="light-box" id="image6">
+                        <a href="#image5" class="next"><i class="fa-solid fa-circle-chevron-left fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <img src="ELECTRICIDAD/IMG (6).jpg" alt="">
+                        <a href="#image7" class="next"><i class="fa-solid fa-circle-chevron-right fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <a href="#galeria" class="close"><i class="fa-solid fa-circle-xmark fa-2xl"
+                                style="color: #ff0000;"></i></a>
+                    </article>
+
+                    <article class="light-box" id="image7">
+                        <a href="#image6" class="next"><i class="fa-solid fa-circle-chevron-left fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <img src="ELECTRICIDAD/IMG (7).jpg" alt="">
+                        <a href="#image8" class="next"><i class="fa-solid fa-circle-chevron-right fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <a href="#galeria" class="close"><i class="fa-solid fa-circle-xmark fa-2xl"
+                                style="color: #ff0000;"></i></a>
+                    </article>
+
+                    <article class="light-box" id="image8">
+                        <a href="#image7" class="next"><i class="fa-solid fa-circle-chevron-left fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <img src="ELECTRICIDAD/IMG (8).jpg" alt="">
+                        <a href="#image9" class="next"><i class="fa-solid fa-circle-chevron-right fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <a href="#galeria" class="close"><i class="fa-solid fa-circle-xmark fa-2xl"
+                                style="color: #ff0000;"></i></a>
+                    </article>
+
+                    <article class="light-box" id="image9">
+                        <a href="#image8" class="next"><i class="fa-solid fa-circle-chevron-left fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <img src="ELECTRICIDAD/IMG (9).jpg" alt="">
+                        <a href="#image10" class="next"><i class="fa-solid fa-circle-chevron-right fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <a href="#galeria" class="close"><i class="fa-solid fa-circle-xmark fa-2xl"
+                                style="color: #ff0000;"></i></a>
+                    </article>
+
+                    <article class="light-box" id="image10">
+                        <a href="#image9" class="next"><i class="fa-solid fa-circle-chevron-left fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <img src="ELECTRICIDAD/IMG (10).jpg" alt="">
+                        <a href="#image11" class="next"><i class="fa-solid fa-circle-chevron-right fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <a href="#galeria" class="close"><i class="fa-solid fa-circle-xmark fa-2xl"
+                                style="color: #ff0000;"></i></a>
+                    </article>
+
+                    <article class="light-box" id="image11">
+                        <a href="#image10" class="next"><i class="fa-solid fa-circle-chevron-left fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <img src="ELECTRICIDAD/IMG (11).jpg" alt="">
+                        <a href="#image12" class="next"><i class="fa-solid fa-circle-chevron-right fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <a href="#galeria" class="close"><i class="fa-solid fa-circle-xmark fa-2xl"
+                                style="color: #ff0000;"></i></a>
+                    </article>
+
+                    <article class="light-box" id="image12">
+                        <a href="#image11" class="next"><i class="fa-solid fa-circle-chevron-left fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <img src="ELECTRICIDAD/IMG (12).jpg" alt="">
+                        <a href="#image13" class="next"><i class="fa-solid fa-circle-chevron-right fa-2xl"
+                                style="color: #7fba00;"></i></a>
+                        <a href="#galeria" class="close"><i class="fa-solid fa-circle-xmark fa-2xl"
+                                style="color: #ff0000;"></i></a>
+                    </article>
+
+                </section>
+                <span class="linea"></span>
+
+                <!--IMAGEN DEL DOCENTE QUE DICTA EL AREA-->
+                <h2 class="text-center">DOCENTES DE LA ESPECIALIDAD</h2>
+
+                <div class="container  d-flex row justify-content-center" id="profes">
+
+                    <div class="card m-3 shadow " style="width: 30rem;" id="foto">
+                        <img src="ELECTRICIDAD/IMG prof(1).jpg" class="card-img-top " alt="...">
+                        <!--SE CREA UNA TARJETA PARA MOSTRAR LA INFORMACIÓN DEL PROFESORY SU IMAGEN-->
+                        <div class="card-body">
+                            <h5 class="card-title text-center">ING. LUIS GERMÁN RODRIGUEZ</h5>
+                        </div>
+                    </div>
+
+
+                    <div class="card m-3 shadow" style="width: 30rem;" id="foto">
+                        <img src="ELECTRICIDAD/IMG prof(2).jpg" class="card-img-top" alt="...">
+                        <!--SE CREA UNA TARJETA PARA MOSTRAR LA INFORMACIÓN DEL PROFESORY SU IMAGEN-->
+                        <div class="card-body">
+                            <h5 class="card-title text-center">ING. FRANCISCO ARIEL ROJAS CESPEDES</h5>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <footer class="bg-light text-center text-white">
+                <!-- Grid container -->
+                <div class="container p-4 pb-0" id="face">
+                    <!-- Section: Social media -->
+                    <section class="mb-4">
+                        <!-- Facebook -->
+                        <a class="btn text-white btn-floating m-1" style="background-color: #3b5998;"
+                            href="https://www.facebook.com/IETIndustrial/?locale=es_LA" role="button"><i
+                                class="fab fa-facebook-f"></i></a>
+
+                        <!-- Twitter -->
+                        <a class="btn text-white btn-floating m-1" style="background-color: #55acee;"
+                            href="https://twitter.com/IETFELIXTIBERIO" role="button"><i class="fab fa-twitter"></i></a>
+
+                        <!-- Google -->
+                        <a class="btn text-white btn-floating m-1" style="background-color: #dd4b39;"
+                            href="https://q.plataformaintegra.net/ietfelixtiberio/" role="button"><i
+                                class="fab fa-google"></i></a>
+
+                        <!-- Instagram -->
+                        <a class="btn text-white btn-floating m-1" style="background-color: #df3adf;"
+                            href="https://www.instagram.com/valqmn/" role="button"><i class="fab fa-instagram"></i></a>
+                    </section>
+                    <!-- Section: Social media -->
+                </div>
+                <!-- Grid container -->
+
+                <!-- Copyright -->
+                <div class="text-center p-3" style="background-color: rgb(15, 15, 15);" id="copy">
+                    © 2023 Copyright:
+                    <a class="text-white" href="http://www.ftg.edu.co ">INSTITUCIÓN F.T.G</a>
+                </div>
+                <!-- Copyright -->
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
