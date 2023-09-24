@@ -6,6 +6,7 @@
   -o-background-size: cover;
   background-size: cover;
 }
+
 /* ESTILOS PARA EL FONDO DEL BODY */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,9 +17,7 @@ body {
 /* ESTILOS PARA EL CONTENEDOR CON EL #CONTENEDORTEXT */
 #contenedorText {
   width: 100%;
-  background-color:white;
-  border: 1px solid chartreuse;
-  
+  background-color: white;
 }
 
 /* ESTILOS PARA LA NAVEGACION */
@@ -41,58 +40,72 @@ h1 {
   background-color: rgb(103, 222, 159);
 }
 
+h2 {
+  font-size: 40px;
+  color: black;
+}
+
 /* REGLAS PARA LOS PARRAFOS */
 p {
   font-family: 'Raleway', sans-serif;
   color: rgb(0, 0, 0);
+  text-align: justify;
+  font-size: 20px;
 }
 
 /* REGLAS PARA LAS MINIATURAS */
-.thumbnail{
+.thumbnail {
   float: left;
   margin-right: 3px;
 }
-.thumbnail1{
+
+.thumbnail1 {
   float: right;
   margin-left: 3px;
 }
+
 /* diseño de la galeria  */
-.galeria{
+.galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   width: 70%;
   margin: auto;
   grid-gap: 10px;
   padding: 40px 0;
   overflow: hidden;
 }
- /* tamaño de las imagenes que se ven en la galeria  */
-.galeria img{
+
+/* tamaño de las imagenes que se ven en la galeria  */
+.galeria img {
   width: 100%;
   vertical-align: auto;
   height: 280px;
   object-fit: cover;
   transition: transform 0.5s;
 }
-.galeria > a{
+
+.galeria>a {
   display: block;
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 6px rgba(0, 0, 0, .5);
 }
-.galeria a:hover img{
+
+.galeria a:hover img {
   filter: blur(2px);
   transform: rotate(10deg) scale(1.3);
 }
- /* color y tamaño de la linea sobre las imagenes */
-.linea{
-  background: rgba(169, 247, 90, 0.877) ;
+
+/* color y tamaño de la linea sobre las imagenes */
+.linea {
+  background: rgba(169, 247, 90, 0.877);
   height: 5px;
   width: 100%;
   display: block;
 }
- /* se organiza la ubicación de la imagen, color del fondo y se centran los elementos para una mejor visualización de la imagen */
-.light-box{
+
+/* se organiza la ubicación de la imagen, color del fondo y se centran los elementos para una mejor visualización de la imagen */
+.light-box {
   position: fixed;
   top: 0;
   left: 0;
@@ -101,23 +114,25 @@ p {
   width: 100%;
   height: 100vh;
   z-index: 1000;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   transform: scale(0);
 }
- /* se escogen las medidas que se deasean para el tamaño de la imagen que selecciona la persona */
-.light-box img{
+
+/* se escogen las medidas que se deasean para el tamaño de la imagen que selecciona la persona */
+.light-box img {
   width: 800px;
   height: 500px;
-/* esta linea de codigo hace parace la imagen que se selecciona  */
-} 
-.light-box:target{
+  /* esta linea de codigo hace parace la imagen que se selecciona  */
+}
+
+.light-box:target {
   transform: scale(1);
 }
 
 /* ESTILOS DEL BOTON QUE CIERRA LA GALERIA */
-.close{
+.close {
   display: block;
   position: absolute;
   top: 55px;
@@ -127,7 +142,7 @@ p {
 }
 
 /* ESTILO DE LOS BOTONES PARA NAVEGAR EN LA GALERIA */
-.next{
+.next {
   display: block;
   height: 30px;
   width: 32px;
