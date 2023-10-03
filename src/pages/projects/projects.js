@@ -1,20 +1,27 @@
 //IMPORTACIONES
-import { authChecking, showTables } from "../../supabase/actions";
-
-//CONDICIÓN PARA VERIFICAR LA AUTENTICACIÓN DE LOS USUARIOS
-authChecking().then((user) => {
-    if (!user) {
-        window.location.href = "../../../index.html"
-    }
-})
+import { authChecking, showTables, logOut} from "../../supabase/actions";
 
 //FUNCION QUE MUESTRA LAS SOLICITUDES APROBADAS EN LA TABLA DE LA PÁGINA
 showTables();
 
-//OBTENIENDO EL BOTÓN CON ID "btn" del documento html
+//OBTENIENDO LOS BOTONES
 const btn = document.getElementById("btn");
+const btnAdmin = document.getElementById("btnAdmin");
+const btnLogOut = document.getElementById("btnCerrarSesion")
 
-//FUNCIONAMIENTO DEL BOTÓN
+//FUNCIONAMIENTO DE LOS BOTONES
 btn.addEventListener("click", () => {
-    window.location.href = "../request/request.html" //Cuando se clickee, envia el usuario a otra pagina
-})
+  window.location.href = "../loading/index.html"; //cunado se clickea redirecciona al usuario a otra pagina
+});
+
+//CONDICIÓN PARA VERIFICAR LA AUTENTICACIÓN DE LOS USUARIOS
+authChecking().then((user) => {
+    if (user){
+        btnLogOut.style.display = "block";
+    }else{
+        btnLogOut.style.display = "none"
+    }
+});
+
+//BOTON PARA CERRAR SESIÓN 
+btnLogOut.addEventListener("click", logOut);

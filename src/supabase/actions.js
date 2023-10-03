@@ -86,7 +86,7 @@ export const createUser = async (emailValue = "", passwordValue = "") => {
             password: passwordValue,
         });
 
-        window.location.href = "../../../index.html";
+        window.location.href = "../loading/index.html";
     }
 };
 
@@ -137,7 +137,7 @@ export const loginUser = async (emailValue = "", passwordValue = "") => {
         return;
     }
 
-    window.location.href = "../../../index.html";
+    window.location.href = "../loading/index.html";
 };
 
 // FUNCIÓN CERRAR SESIONES

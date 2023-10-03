@@ -4,7 +4,7 @@ import { authChecking, getDateEsp, getDateDegree, saveTask } from "../../supabas
 //CONDICIÓN PARA VERIFICAR LA AUTENTICACIÓN DE LOS USUARIOS
 authChecking().then((user) => {
     if (!user) {
-        window.location.href = "../../../index.html";
+        window.location.href = "./request.js";
     } else {
         //OBTENIENDO LOS DATOS DE LA TABLA ESPECIALIDADES DE LA BASE DE DATOS
         getDateEsp().then((dateEsp) => {
@@ -86,6 +86,6 @@ document.getElementById("form").addEventListener("submit", (event) => {
 cerrarModal.addEventListener("click", () => {
     modal.style.display = "none";
 
-    window.history.back();
+    window.location.href = "../projects/projects.html"
 })
 

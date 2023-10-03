@@ -4,8 +4,7 @@ import { authChecking, loginUser } from "../../supabase/actions";
 //CONDICIÓN PARA VERIFICAR LA AUTENTICACIÓN DE LOS USUARIOS
 authChecking().then((user) => {
     if (user) {
-        // console.log(authChecking)
-        window.location.href = "../../../index.html"
+        window.location.href = "../request/request.html"
     }
 })
 

@@ -1,0 +1,321 @@
+body {
+  background-image: url(BGS.png);
+  width: 100%;
+  height: 100%; /* Establece la altura que desees */
+  background-size: 100%; /* Ajusta el tamaño de la imagen para cubrir el elemento */
+  background-position: initial;
+  background-repeat: repeat;
+}
+.header {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: 100%;
+  padding: 1px;
+}
+
+.header img {
+  max-width: 100%;
+  height: auto;
+}
+
+.header p {
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 45px;
+  color: rgb(255, 255, 255);
+}
+
+.container-sm {
+  width: 100%;
+  height: 100%;
+}
+
+.container-fluid {
+  background-color: rgb(255, 255, 255);
+}
+
+.carousel img {
+  max-height: 450px;
+  opacity: 100%;
+}
+
+.espaciado {
+  margin-left: 20px;
+}
+.cls-1 {
+  font-family: "Kanit", sans-serif;
+  font-size: 30px;
+}
+.cls-15 {
+  font-size: 22px;
+  font-family: "Kanit", sans-serif;
+}
+
+
+.learn-more-text {
+  font-family: "Kanit", sans-serif;
+  fill: #00b809;
+  cursor: pointer;
+  font-size: 20px;
+  
+ text-decoration: underline;
+}
+
+/* el circulo grande del centro*/
+.center {
+  stroke: #41d805;
+  stroke-width: 3;
+  fill: #000000;
+}
+/* el punto del menu*/
+.pointer {
+  fill: #fff;
+  stroke: #2ad300;
+  stroke-width: 3;
+}
+
+.nav-copy {
+  font-family: "Roboto";
+  fill: #baff9a;
+  fill-opacity: 1;
+  -webkit-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
+}
+
+.nav-copy.changing {
+  fill-opacity: 0;
+}
+
+.service {
+  cursor: pointer;
+}
+
+.service text {
+  font-size: 14px;
+  font-family: "Roboto";
+  text-anchor: middle;
+}
+
+.service .icon-wrapper {
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+.service .icon-wrapper,
+.service .icon-wrapper > * {
+  -webkit-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
+}
+
+/*los circulos de alrededor*/
+.service circle {
+  fill: #000000;
+  stroke: #eeff00;
+  stroke-width: 2;
+}
+
+.service circle.shadow {
+  fill-opacity: 0;
+  -webkit-filter: url(#service-shadow);
+  filter: url(#service-shadow);
+}
+/*color de los iconos*/
+.service use {
+  fill: #eeff00;
+}
+
+.service text {
+  fill: #000000;
+}
+
+.service.active .icon-wrapper,
+.service:hover .icon-wrapper {
+  -webkit-transform: scale(1.15) translateY(-5px);
+  transform: scale(1.15) translateY(-5px);
+}
+
+.service.active .icon-wrapper,
+.service.active .icon-wrapper > *,
+.service:hover .icon-wrapper,
+.service:hover .icon-wrapper > * {
+  -webkit-transition: all 250ms ease-out;
+  transition: all 250ms ease-out;
+}
+
+.service.active .icon-wrapper circle.shadow,
+.service:hover .icon-wrapper circle.shadow {
+  fill-opacity: 0.4;
+}
+
+.service.active text,
+.service:hover text {
+  fill: #000000;
+  font-weight: bold;
+}
+.contenido {
+  width: 100%;
+  height: 100%;
+}
+.container h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 60px;
+  color: rgb(73, 212, 73);
+}
+.container p {
+  line-height: 1.5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 25px;
+}
+.container li {
+  line-height: 1.5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 25px;
+}
+.list-group a {
+  background-color: #000000;
+  height: 75px;
+  background-color: #000000;
+  width: 180px;
+  text-align: center;
+  font-size: 25px;
+  text-decoration: none;
+  color: rgb(2, 209, 19);
+  border-width: 5px;
+  border-top-color: #41e202;
+  border-right-color: #41e202;
+  border-bottom-color: #eeff00;
+  border-left-color: #eeff00;
+  margin-left: 10px;
+}
+
+.list-group p {
+  color: white;
+  line-height: 1;
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: "Bebas Neue", sans-serif;
+  text-align: center;
+}
+.container a:hover {
+  background-color: transparent;
+  border: 2px solid rgb(73, 212, 73);
+  color: #eeff00;
+}
+.list-group item {
+  width: 200px;
+}
+
+.list-group {
+  background-color: #000000;
+  width: 200px;
+  height: 370px;
+
+  font-family: "Bebas Neue", sans-serif;
+  margin-top: 10px;
+}
+.image-container {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s;
+}
+
+/* galeria*/
+.gallery-block {
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+
+.gallery-block .heading {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.gallery-block .heading h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  text-decoration: underline;
+}
+
+.gallery-block.cards-gallery h6 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.gallery-block.cards-gallery .card {
+  transition: 0.4s ease;
+}
+
+.gallery-block.cards-gallery .card img {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-block.cards-gallery .card-body {
+  text-align: center;
+}
+
+.gallery-block.cards-gallery .card-body p {
+  font-size: 15px;
+}
+
+.gallery-block.cards-gallery a {
+  color: #212529;
+}
+
+.gallery-block.cards-gallery a:hover {
+  text-decoration: none;
+}
+
+.gallery-block.cards-gallery .card {
+  margin-bottom: 30px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 576px) {
+  .gallery-block .transform-on-hover:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15) !important;
+  }
+}
+.accordion{
+  margin-top:25px ;
+  
+}
+.accordion-button{
+
+font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+font-weight: bold;
+
+}
+.accordion-item{
+  margin-bottom: 25px;
+  
+}
+
+#titulo{
+font-family: "Bebas Neue", sans-serif;
+font-size: 28px;
+}
+#contenido{
+font-family:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+font-size: 16px;
+text-align: left;
+}
+#a{
+ font-family: "Bebas Neue", sans-serif; 
+ font-size: 20px;
+ letter-spacing: 1px;
+}

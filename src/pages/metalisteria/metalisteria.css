@@ -4,14 +4,9 @@
     background-color: rgb(144, 255, 33) !important;
 }
 
-#nav1 {
-    background-color: #945aeb;
-}
-
 #contenedorText {
     width: 100%;
     background-color: white;
-    border: 1px solid rgba(169, 247, 90, 0.877);
 }
 
 .carousel-item {
@@ -129,6 +124,7 @@ h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 60px;
     text-align: center;
+    background-color: rgb(115, 184, 176);
 }
 
 h2 {

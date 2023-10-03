@@ -5,15 +5,12 @@
   background-color: rgb(144, 255, 33) !important;
 }
 
-#nav1 {
-  background-color: rgb(23, 228, 200);
-}
+
 
 /* AQUI SE ESCOGE EL COLOR DE CONTENEDOR*/
 #contenedorText {
   width: 100%;
   background-color: white;
-  border: 1px solid rgba(169, 247, 90, 0.877);
 }
 
 /**/
@@ -32,9 +29,10 @@ h1 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 60px;
   text-align: center;
+  background-color: rgb(115, 184, 176);
 }
 
-h2{
+h2 {
   font-size: 40px;
   color: black;
 }
@@ -159,9 +157,7 @@ a:hover {
   float: right;
 }
 
-#face {
-  border: 1px solid rgba(169, 247, 90, 0.877);
-}
+
 
 /*AQUI SE ESCOGE EL FONDO QUE LLEVA LA PAGINA */
 body {

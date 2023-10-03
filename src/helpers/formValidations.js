@@ -26,6 +26,6 @@ export const formValidations = (error) => {
         style: {
             background: "linear-gradient(to right, #CC0000, #990000, #660000, #330000)"
         },
-        onClick: function () { }, // Callback after click
+        onClick: function () { }, 
     }).showToast();
 };

@@ -13,7 +13,6 @@
 #contenedorText {
   width: 100%;
   background-color: white;
-  border: 1px solid rgba(169, 247, 90, 0.877);
 }
 
 /**/
@@ -32,9 +31,10 @@ h1 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 60px;
   text-align: center;
+  background-color: rgb(115, 184, 176);
 }
 
-h2{
+h2 {
   font-size: 40px;
   color: black;
 }
@@ -49,11 +49,6 @@ p {
 
 a:hover {
   border-bottom: 2px solid rgb(0, 0, 0) !important;
-}
-
-/*AQUI SE ESCOGE EL COLOR DEL BORDE SECCION SOCIAL*/
-#face {
-  border: 1px solid rgba(169, 247, 90, 0.877);
 }
 
 /*AQUI SE ESCOGE EL COLOR DEL DIV DEL COPYRIGHT*/
