@@ -12,6 +12,8 @@
     <!--ESTIILOS DE BOOSTRAP-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!--FONT AWESOME-->
+     <script src="https://kit.fontawesome.com/8f928163bf.js" crossorigin="anonymous"></script>
     <!-- LINK DE CSS -->
     <link rel="stylesheet" href="request.css">
 </head>
@@ -28,14 +30,21 @@
     </style>
 
     <!-- Contendor principal -->
-    <div class="container-fluid justify-content-center vh-100 ">
+    <div class="container-fluid justify-content-center align-items-center vh-100 ">
+        
 
         <!-- Contenedor con los campos del formulario -->
         <div class="container d-flex justify-content-center mt-3">
-
             <!-- La etiqueta <form> permite crear un formulario -->
             <form class=" bg-white row border rounded-3 p-4 m-2 shadow-lg needs-validation" novalidate
                 style="width: 1000px;" id="form"> <!-- Estilos del formulario -->
+
+                <nav class="navbar">
+                    <div class="text-lg-start">
+                       <a class="navbar-brand" href="../projects/projects.html"> 
+                        <i class="fas fa-arrow-left fa-lg" style="color: green;"></i></a>
+                    </div>
+                  </nav>
 
                 <!-- Contenedor con los campos del formulario -->
                 <div class="col-12">
