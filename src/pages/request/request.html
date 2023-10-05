@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FORMULARIO SOLICITUD</title>
     <!--SCRIPT DE BOOSTRAP-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
@@ -52,14 +52,14 @@
                     <!-- <label> permite crear una etiqueta para un campo del formulario -->
                     <label for="nombreInput" class="form-label">Titulo del proyecto</label>
                     <!-- La etiqueta <input> crea un campo del formulario-->
-                    <input type="text" class="form-control mb-3" id="nombreInput" required>
+                    <input type="text" class="form-control mb-3" id="nombreInput" placeholder="Escribe el titulo de tu proyecto, asegurate que este no va a ser cambiado en un futuro" required>
                     <div class="invalid-feedback">Este campo es obligatorio</div>
                     <!--Mensaje que se muestra cuando el campo se deja vacio-->
                 </div>
 
                 <div class="col-6">
-                    <label for="jefeInput" class="form-label">Jefe del proyecto</label>
-                    <input type="text" class="form-control mb-3" id="jefeInput" required>
+                    <label for="jefeInput" class="form-label">Autores del proyecto</label>
+                    <input type="text" class="form-control mb-3" id="jefeInput" placeholder="Menciona todos los integrantes usando ¨,¨ de por medio"  required>
                     <div class="invalid-feedback">Este campo es obligatorio</div>
                 </div>
 
@@ -109,7 +109,7 @@
                 <div class="col-12">
                     <label for="resumenInput" class="form-label">Resumen de tu proyecto</label>
                     <textarea id="resumenInput"
-                        placeholder="Describe cual es la problematica que se va a solucionar, de que manera y menciona todos los integrantes del proyecto."
+                        placeholder="Describe cual es la problematica que se quiere solucionar, de que manera y que beneficios traera dicha la solución a la comunidad."
                         class="form-control mb-3" style="height: 100px; max-height: 100px;" required></textarea>
 
                     <div class="invalid-feedback">Este campo es obligatorio</div>
